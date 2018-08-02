@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { Router, Switch, Route, Redirect } from 'react-router-dom';
 import { Tracker } from 'meteor/tracker';
+import { Session } from 'meteor/session';
 import createHistory from 'history/createBrowserHistory';
 
 import SignUp from '../imports/UI/SignUp';
@@ -52,5 +53,6 @@ Tracker.autorun(() => {
 });
 
 Meteor.startup(() => {
+  Session.set('showVisible', true);
   ReactDOM.render(routes, document.getElementById('app'));
 });

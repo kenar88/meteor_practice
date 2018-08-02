@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 
 import { Tracker } from 'meteor/tracker';
+import { Session } from 'meteor/session';
 import { Links } from '../api/links';
 
 import LinkListItem from './LinkListItem';
@@ -18,7 +19,9 @@ class LinksList extends Component {
   componentDidMount() {
     this.TrackerList = Tracker.autorun(() => {
       Meteor.subscribe('links');
-      const links = Links.find().fetch();      
+      const links = Links.find({
+        visible: Session.get('showVisible'),
+      }).fetch();      
       this.setState({links});
     });
   }
