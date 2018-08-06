@@ -33,11 +33,13 @@ class SignUp extends Component {
   render() { 
 
     return (
-      <div>
-        <p>Signup!</p>
+      <div className="boxed-view">
+        <div className="boxed-view__box">
+        <h1>Signup!</h1>
+
         {this.state.error ? <p>{this.state.error}</p> : undefined}
 
-        <form onSubmit={this.onSubmit} noValidate>
+        <form className=".boxed-view__form" onSubmit={this.onSubmit} noValidate>
           <input
             ref={(input) => { this.inputMail = input; }}
             type="email"
@@ -50,9 +52,11 @@ class SignUp extends Component {
             name="password"
             placeholder="Password"
             />
-          <button>Create account</button>
+          <button className="btn">Create account</button>
         </form>
         <h2>link to <Link to="/">Already have an account?</Link></h2>
+        </div>
+        
       </div>           
     );
   }

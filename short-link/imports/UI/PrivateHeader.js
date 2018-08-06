@@ -6,12 +6,12 @@ const PrivateHeader = (props) => {
   const onLogout = () => {
     Accounts.logout();
   }
-
   return (
-    <div>
-      <p>{props.header}</p>
-      <button onClick={onLogout}>Log out</button>
-    </div>
+    <div className="boxed-view__header"> 
+      <h1>{props.header}</h1>
+      <a className="btn--header" onClick={onLogout}>Logout</a>
+    </div>    
+
   );
 }
 
