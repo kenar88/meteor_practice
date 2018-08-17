@@ -76,5 +76,3 @@ LinkListItem.propTypes = {
   lastVisitedAt: PropTypes.number,
   visitedCount: PropTypes.number.isRequired,
 };
-
-export default LinkListItem;
